@@ -1,0 +1,23 @@
+{
+  "name": "jugando-con-git-ci-cd",
+  "version": "1.0.0",
+  "description": "Project with Express and Pug",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "jest"
+  },
+  "author": "Gabriel L Martinez",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gabmartinez/jugando-con-git-ci-cd.git"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pug": "^2.0.4"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0"
+  }
+}
