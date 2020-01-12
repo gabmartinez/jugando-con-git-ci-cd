@@ -1,6 +1,6 @@
 steps:
-    - name: 'gcr.io/cloud-builders/docker'
-      args: ['build', '-t', 'gcr.io/$PROJECT_ID/containers/playing_with_git:latest', '.']
-      timeout: 500s
-  images:
-    - 'gcr.io/$PROJECT_ID/containers/playing_with_git:latest'
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/containers/playing_with_git:latest', '.']
+    timeout: 500s
+images:
+  - 'gcr.io/$PROJECT_ID/containers/playing_with_git:latest'
