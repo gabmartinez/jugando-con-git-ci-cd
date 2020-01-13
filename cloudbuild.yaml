@@ -3,7 +3,7 @@ steps:
     args: ['build', '-t', 'gcr.io/$PROJECT_ID/containers/playing_with_git:latest', '.']
     timeout: 500s
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/$PROJECT_ID/containers/playing_with_git:latest', '.']
+    args: ['push', 'gcr.io/$PROJECT_ID/containers/playing_with_git:latest']
     timeout: 500s
   - name: gcr.io/cloud-builders/gcloud
     args:
