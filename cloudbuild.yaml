@@ -22,4 +22,4 @@ steps:
     - --force-key-file-overwrite
     - --zone=${_INSTANCE_ZONE}
     - --ssh-key-file=${_DEPLOY_KEY}
-    - --command=docker pull playing_with_git:latest && (docker stop playing_with_git_app || true) && (docker rm playing_with_git_app || true) && docker run --name playing_with_git_app -d -p 127.0.0.1:3001:3000 playing_with_git:latest
+    - --command=docker pull gcr.io/$PROJECT_ID/containers/playing_with_git:latest && (docker stop playing_with_git_app || true) && (docker rm playing_with_git_app || true) && docker run --name playing_with_git_app -d -p 127.0.0.1:3001:3000 gcr.io/$PROJECT_ID/containers/playing_with_git:latest
