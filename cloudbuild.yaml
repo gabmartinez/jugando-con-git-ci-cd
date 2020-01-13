@@ -2,9 +2,15 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'gcr.io/$PROJECT_ID/containers/playing_with_git:latest', '.']
     timeout: 500s
-  - name: 'ubuntu'
-    args: ['bash', 'echo', '$$SSH_KEY', '>>', '${_DEPLOY_KEY}']
-    secretEnv: ['SSH_KEY']
+  - name: gcr.io/cloud-builders/gcloud
+    args:
+    - kms
+    - decrypt
+    - --ciphertext-file=${_DEPLOY_KEY_ENC}
+    - --plaintext-file=${_DEPLOY_KEY}
+    - --location=global
+    - --keyring=${_KEYRING_NAME}
+    - --key=${_KEY_NAME}
   - name: 'gcr.io/cloud-builders/gcloud'
     args:
     - compute
@@ -16,7 +22,3 @@ steps:
     - --command=docker pull playing_with_git:latest && (docker stop playing_with_git_app || true) && (docker rm playing_with_git_app || true) && docker run --name playing_with_git_app -d -p 127.0.0.1:3001:3000 playing_with_git:latest
 images:
   - 'gcr.io/$PROJECT_ID/containers/playing_with_git:latest'
-secrets:
-  - kmsKeyName: projects/$PROJECT_ID/locations/global/keyRings/${_KEYRING_NAME}/cryptoKeys/${_KEY_NAME}
-    secretEnv:
-      SSH_KEY: ${_DEPLOY_KEY_ENC}
