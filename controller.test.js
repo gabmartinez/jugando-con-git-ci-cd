@@ -25,9 +25,9 @@ test('product_2 should has name', () => {
     expect(product.name).not.toBeNull();
 });
 
-test('product_2 price returns NaN', () => {
+test('product_2 price returns 50', () => {
     const product = controller.product_2();
-    expect(product.price).toBeNaN();
+    expect(product.price).toBe(50);
 });
 
 test('product_3 should has name', () => {
