@@ -67,5 +67,5 @@ test('product_6 should has name', () => {
 
 test('product_6 price returns NaN', () => {
     const product = controller.product_6();
-    expect(product.price).toBeNaN();
+    expect(product.price).toBeGreaterThan(5);
 });
