@@ -1,7 +1,7 @@
 function product_1() {
     return {
         "name": "product_1",
-        "price": NaN
+        "price": 5
     }
 }
 
