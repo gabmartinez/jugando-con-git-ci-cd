@@ -36,7 +36,7 @@ function product_5() {
 function product_6() {
     return {
         "name": "product_6",
-        "price": randomPrice(5, 10)
+        "price": NaN
     }
 }
 
