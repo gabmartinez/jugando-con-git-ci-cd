@@ -1,28 +1,28 @@
 function product_1() {
     return {
         "name": "product_1",
-        "price": NaN
+        "price": 5
     }
 }
 
 function product_2() {
     return {
         "name": "product_2",
-        "price": NaN
+        "price": 50
     }
 }
 
 function product_3() {
     return {
         "name": "product_3",
-        "price": NaN
+        "price": 12.67
     }
 }
 
 function product_4() {
     return {
         "name": "product_4",
-        "price": NaN
+        "price": 10
     }
 }
 
